@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - SEÑOR BARRIL MZ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap');
+        
+        body {
+            background-color: #1a1a1a;
+            color: #e0d2b4;
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1580554530778-ca36943938b2?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #b38b59;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin: 0;
+            color: #b38b59;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #e0d2b4;
+        }
+        
+        .logo {
+            margin: 0 auto 20px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #b38b59;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            margin-left: -10%;
+            object-fit: cover;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            border-bottom: 1px solid #b38b59;
+            padding-bottom: 15px;
+        }
+        
+        .nav-item {
+            margin: 10px;
+            color: #b38b59;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            color: #e0d2b4;
+            transform: translateY(-3px);
+        }
+        
+        .menu-section {
+            margin: 40px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #b38b59;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b38b59;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2:after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #b38b59;
+            margin: 10px auto;
+        }
+        
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .menu-item {
+            width: 48%;
+            margin-bottom: 30px;
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(179, 139, 89, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            min-height: 150px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .beverages-section .menu-item {
+            width: 32%;
+            min-height: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .menu-item-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .menu-item-content {
+            padding: 15px;
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(179, 139, 89, 0.5);
+            background-color: rgba(26, 26, 26, 0.9);
+        }
+        
+        .menu-item:hover .menu-item-image {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+        
+        .item-name {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #e0d2b4;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .item-name::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: #b38b59;
+            margin-top: 5px;
+        }
+        
+        .item-description {
+            font-style: italic;
+            margin: 10px 0;
+            color: #a9a9a9;
+            font-size: 0.95em;
+            line-height: 1.4;
+            padding-bottom: 40px;
+        }
+        
+        .item-price {
+            color: #b38b59;
+            font-weight: bold;
+            font-size: 1.3em;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(179, 139, 89, 0.5);
+        }
+        
+        .food-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .food-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(179, 139, 89, 0.5);
+        }
+        
+        .section-banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        
+        .section-banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+            border-radius: 8px;
+        }
+                
+        .menu-note {
+            text-align: center;
+            font-style: italic;
+            margin: 30px 0;
+            color: #a9a9a9;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #a9a9a9;
+            font-size: 0.9em;
+        }
+        
+        .contact {
+            margin-top: 20px;
+        }
+        
+        .contact p {
+            margin: 5px 0;
+        }
+        
+        .decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #b38b59;
+        }
+        
+        @media print {
+            body {
+                background-image: none;
+                background-color: #1a1a1a;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="/Users/jubetancur/Documents/seller stage/imagenes/Mascot Full color-01.png" alt="Logo Sr Barril MZ">
+            </div>
+            <h1>MR BARRIL MZ</h1>
+            <div class="subtitle">Sabores auténticos y tradicionales</div>
+        </header>
+        
+        <nav class="nav">
+            <a href="#arepas" class="nav-item">AREPAS</a>
+            <a href="#ceviches" class="nav-item">CEVICHES</a>
+            <a href="#combo-barril" class="nav-item">COMBO BARRIL</a>
+            <a href="#barril-personal" class="nav-item">BARRIL PERSONAL</a>
+            <a href="#antojate" class="nav-item">ANTOJATE</a>
+            <a href="#adiciones" class="nav-item">ADICIONES</a>
+            <a href="#sodas" class="nav-item">SODAS</a>
+            <a href="#bebidas" class="nav-item">BEBIDAS</a>
+        </nav>
+        
+        <div class="decoration">✻ ✻ ✻</div>
+        
+        <div id="arepas" class="menu-section">
+            <h2>AREPAS</h2>
+            <img src="/Users/jubetancur/Documents/seller stage/imagenes/WhatsApp Image 2025-06-05 at 9.02.15 AM.jpeg" alt="Arepas" class="section-banner">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Arepa Barrilera Solo Queso</div>
+                        <div class="item-description">Arepa asada al punto, rellena con queso mozzarella derretido. Crujiente por fuera, suave y cremosa por dentro.</div>
+                        <div class="item-price">$ 9,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Arepa Barrilera Chorizo</div>
+                        <div class="item-description">Arepa asada con chorizo artesanal y queso mozzarella derretido. Sabor auténtico, crujiente por fuera y jugoso por dentro.</div>
+                        <div class="item-price">$ 12,200</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Arepa Barrilera Mixta</div>
+                        <div class="item-description">Arepa asada rellena con carnes (bondiola, punta anca, chicharron) al barril y queso mozzarella fundido.</div>
+                        <div class="item-price">$ 14,700</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Arepa Barrilera Chicharron</div>
+                        <div class="item-description">Arepa asada rellena con chicharron al barril, queso mozzarella derretido.</div>
+                        <div class="item-price">$ 14,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Arepa Barrilera Bondiola</div>
+                        <div class="item-description">Arepa asada rellena con bondiola al barril y queso mozzarella fundido.</div>
+                        <div class="item-price">$ 12,500</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Arepa Barrilera Punta de Anca</div>
+                        <div class="item-description">Arepa asada rellena con punta de anca al barril y queso mozzarella fundido.</div>
+                        <div class="item-price">$ 14,500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ceviches" class="menu-section">
+            <h2>CEVICHES</h2>
+            <img src="/Users/jubetancur/Documents/seller stage/imagenes/WhatsApp Image 2025-06-05 at 9.02.14 AM (1).jpeg" alt="Ceviches" class="section-banner">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Señor Ceviche Chicharron Gulupa</div>
+                        <div class="item-description">Chicharrón al barril, con limón y bañado en nuestra exclusiva salsa de Gulupa. Acompañado de papas a la francesa crujientes y salsas caseras.</div>
+                        <div class="item-price">$ 29,200</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Señor Ceviche Chicharron Jalapeño</div>
+                        <div class="item-description">Chicharrón al barril estilo ceviche, con limón, bañado en nuestra salsa de jalapeño. Acompañado de papas a la francesa y salsas caseras.</div>
+                        <div class="item-price">$ 29,200</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Señor Ceviche De Chicharron De La Casa</div>
+                        <div class="item-description">Chicharrón al barril estilo ceviche, con limón, cebolla y pimentón asado. Acompañado de papas a la francesa crujientes y salsas caseras.</div>
+                        <div class="item-price">$ 29,200</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="combo-barril" class="menu-section">
+            <h2>COMBO BARRIL</h2>
+            <img src="/Users/jubetancur/Documents/seller stage/imagenes/combo.png" alt="Combo Barril" class="section-banner">
+
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Combo Barril Duo</div>
+                        <div class="item-description">500 g de carnes (chicharrón, punta de anca, bondiola, costilla), con papas fritas, piña con mozzarella, chimichurri, BBQ y cilantro fresco.</div>
+                        <div class="item-price">$ 54,900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Combo Barril Trio</div>
+                        <div class="item-description">¡1 kg de carne al barril! Tres cortes, chorizo, papas y piña asada con mozzarella. Suficiente para 3 fanáticos del buen asado.</div>
+                        <div class="item-price">$ 78,900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Combo Legendario Familiar</div>
+                        <div class="item-description">¡Más de 1.2 kg de carne al barril! 2 chorizos, papas, piña con mozzarella, plátano con queso y bocadillo. Para 4 o 5 carnívoros felices.</div>
+                        <div class="item-price">$ 98,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="barril-personal" class="menu-section">
+            <h2>BARRIL PERSONAL</h2>
+            <img src="/Users/jubetancur/Documents/seller stage/imagenes/WhatsApp Image 2025-06-05 at 9.02.14 AM.jpeg" alt="Barril Personal" class="section-banner">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-name">Barril Ahumado Costilla</div>
+                    <div class="item-description">Costilla de cerdo (233 g), papas, piña asada con mozzarella derretida y salsas caseras. Tierno, jugoso e irresistible.</div>
+                    <div class="item-price">$ 31,400</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Barril Ahumado Chicharron</div>
+                    <div class="item-description">Chicharron ahumado acompañado de papas, piña asada con mozzarella derretida y salsas caseras.</div>
+                    <div class="item-price">$ 33,900</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Barril Ahumado Punta De Anca</div>
+                    <div class="item-description">Jugosa punta de anca ahumada con papas fritas, piña asada con mozzarella derretido y salsas caseras.</div>
+                    <div class="item-price">$ 33,900</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Barril Ahumado Bondiola</div>
+                    <div class="item-description">Bondiola (270g), papas, piña asada con mozzarella derretida y salsas caseras. Jugosidad que te va a tentar.</div>
+                    <div class="item-price">$ 29,000</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Barril Ahumado Mixto</div>
+                    <div class="item-description">380 gr de carne al barril (Chicharrón, costilla, bondiola) acompañado de papas fritas, piña asada con mozzarella y salsas caseras.</div>
+                    <div class="item-price">$ 37,900</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Chorizo Al Barril</div>
+                    <div class="item-description">Chorizo al barril con papas, piña asada con mozzarella derretida, una combinación jugosa y llena de sabor.</div>
+                    <div class="item-price">$ 27,000</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="antojate" class="menu-section">
+            <h2>ANTOJATE</h2>
+            <img src="/Users/jubetancur/Documents/seller stage/imagenes/WhatsApp Image 2025-06-05 at 9.02.15 AM (3).jpeg" alt="Antojate" class="section-banner">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-name">Platano Asado Al Barril</div>
+                    <div class="item-description">Plátano maduro asado al barril, relleno con queso derretido y bocadillo dulce. Un clásico irresistible que combina lo cremoso, lo dulce y lo ahumado.</div>
+                    <div class="item-price">$ 13,500</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="adiciones" class="menu-section">
+            <h2>ADICIONES</h2>
+            <img src="/Users/jubetancur/Documents/seller stage/imagenes/adiciones/ChatGPT Image May 7, 2025, 10_29_54 AM (1).png" alt="Combo Barril" class="section-banner">
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-name">Adicion Piña Asada</div>
+                    <div class="item-description">Rodaja de piña asada al barril con queso mozzarella derretido, un contraste perfecto entre dulzura tropical y cremosidad fundida.</div>
+                    <div class="item-price">$ 3,700</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Adicion Chorizo</div>
+                    <div class="item-description">150 g de chorizo asado al barril, jugoso y lleno de sabor.</div>
+                    <div class="item-price">$ 7,500</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Adicion Papa Fracensa</div>
+                    <div class="item-description">Crujientes, doradas e irresistibles. No son solo una guarnición... ¡son una obsesión! Sazonadas y servidas calientes, son el complemento ideal o la excusa para pedir otra.</div>
+                    <div class="item-price">$ 6,500</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">Adicion Queso Mozarella</div>
+                    <div class="item-description">50 g de cremoso y delicioso queso</div>
+                    <div class="item-price">$ 3,000</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="sodas" class="menu-section">
+            <h2>SODAS SABORIZADAS</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="/Users/jubetancur/Documents/seller stage/imagenes/sodas/Soda-Maracuya-scaled-600x900.jpg" alt="Soda de Maracuyá" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="item-name">Soda saborizada de Maracuya</div>
+                        <div class="item-description">Refrescante soda saborizada con maracuyá natural. Equilibrio perfecto entre dulzura y acidez tropical.</div>
+                        <div class="item-price">$ 8,900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/Users/jubetancur/Documents/seller stage/imagenes/sodas/Soda-Cereza-scaled (1).jpg" alt="Soda de Sandía" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="item-name">Soda saborizada de Sandia</div>
+                        <div class="item-description">Refrescante soda con el dulce sabor de la sandía. Burbujas suaves y un toque frutal que refresca.</div>
+                        <div class="item-price">$ 8,900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/Users/jubetancur/Documents/seller stage/imagenes/sodas/soda_frutosrojos.jpg" alt="Soda de Frutos Rojos" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="item-name">Soda saborizada de Frutos rojos</div>
+                        <div class="item-description">Soda ligera y burbujeante con el sabor vibrante de frutos rojos. Refrescante y frutal.</div>
+                        <div class="item-price">$ 8,900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/Users/jubetancur/Documents/seller stage/imagenes/sodas/Soda-Mango-Biche-scaled.jpg" alt="Soda de Mango Biche" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="item-name">Soda saborizada de Mango Biche</div>
+                        <div class="item-description">Soda burbujeante con el sabor ácido y refrescante del mango biche. Un toque tropical atrevido.</div>
+                        <div class="item-price">$ 8,900</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="bebidas" class="menu-section beverages-section">
+            <h2>BEBIDAS</h2>
+            <div class="menu-items">
+                <!-- CERVEZAS -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Pilsen Laton</div>
+                        <div class="item-description">473 ml</div>
+                        <div class="item-price">$ 6,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Cerveza Michelod</div>
+                        <div class="item-description">293 ml</div>
+                        <div class="item-price">$ 5,800</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Club Dorada</div>
+                        <div class="item-description">Latón 473 ml</div>
+                        <div class="item-price">$ 7,800</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Club Colombia Roja</div>
+                        <div class="item-description">Lata</div>
+                        <div class="item-price">$ 7,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Aguila Light</div>
+                        <div class="item-description">Latón 473 ml</div>
+                        <div class="item-price">$ 6,500</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Aguila</div>
+                        <div class="item-description">Latón 473 ml</div>
+                        <div class="item-price">$ 6,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Corona</div>
+                        <div class="item-description">330 ml</div>
+                        <div class="item-price">$ 7,500</div>
+                    </div>
+                </div>
+                
+                <!-- BEBIDAS VARIAS -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">MR TEA</div>
+                        <div class="item-description">500 ml</div>
+                        <div class="item-price">$ 7,100</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Saviloe</div>
+                        <div class="item-description">320 ml</div>
+                        <div class="item-price">$ 5,600</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Coca Cola</div>
+                        <div class="item-description">400 ml</div>
+                        <div class="item-price">$ 5,800</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Brisa</div>
+                        <div class="item-description">600 ml</div>
+                        <div class="item-price">$ 5,400</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Agua</div>
+                        <div class="item-description">600 ml</div>
+                        <div class="item-price">$ 3,500</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">SCHWEPPES</div>
+                        <div class="item-description">Soda 400 ml</div>
+                        <div class="item-price">$ 5,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">QUATRO</div>
+                        <div class="item-description">400 ml</div>
+                        <div class="item-price">$ 5,400</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Agua Con Gas</div>
+                        <div class="item-description">620 ml</div>
+                        <div class="item-price">$ 6,000</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="item-name">Vaso Michelado</div>
+                        <div class="item-description">Para cervezas y sodas</div>
+                        <div class="item-price">$ 2,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-note">
+            Todos nuestros platos son preparados con ingredientes frescos y de la mejor calidad.
+        </div>
+        
+        <div class="decoration">✻ ✻ ✻</div>
+        
+        <footer>
+            <div class="contact">
+                <p>Ubicanos cerca de la Iglesia la Goretti, Bello - Calle 66 # 64-29</p>
+                <p>Teléfono: 310 843 9288</p>
+                <p>Email: restaurantesenorbarrilmz@gmail.com</p>
+                <p>Síguenos en redes sociales @srbarrilmz</p>
+            </div>
+            <p>© 2025 SEÑOR BARRIL MZ - Todos los derechos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>
