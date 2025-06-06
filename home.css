@@ -1,0 +1,252 @@
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1a1a1a;
+            color: #e0d2b4;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1580554530778-ca36943938b2?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid rgba(255, 108, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #b38b59;
+            animation: glowPulse 3s infinite alternate;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-left: -10%;
+        }
+        
+        .logo-fire-effect {
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            right: -10px;
+            height: 60px;
+            background: radial-gradient(ellipse at center, rgba(255,108,0,0.8) 0%, rgba(255,69,0,0.6) 30%, rgba(255,35,0,0.4) 60%, transparent 80%);
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: -1;
+            opacity: 0.8;
+            animation: fireEffect 3s infinite alternate ease-in-out;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #b38b59;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+        
+        .subtitle {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #e0d2b4;
+        }
+        
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .option {
+            flex: 1;
+            min-width: 240px;
+            max-width: 280px;
+            padding: 25px 15px;
+            background-color: rgba(26, 26, 26, 0.9);
+            border: 1px solid rgba(179, 139, 89, 0.5);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #e0d2b4;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 108, 0, 0.3);
+            background-color: rgba(179, 139, 89, 0.1);
+            border-color: #b38b59;
+        }
+        
+        .option-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 2px solid #b38b59;
+            color: #b38b59;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover .option-icon {
+            background-color: #b38b59;
+            color: #1a1a1a;
+            transform: scale(1.1);
+        }
+        
+        .option-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .option-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+        }
+        
+        .menu-option {
+            background: linear-gradient(135deg, rgba(179, 139, 89, 0.3), rgba(26, 26, 26, 0.9));
+            border: 2px solid #b38b59;
+        }
+        
+        .decoration {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+            color: #b38b59;
+        }
+        
+        footer {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #a9a9a9;
+        }
+        
+        .address {
+            margin-top: 10px;
+        }
+        
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 25px 5px rgba(255, 108, 0, 0.5); }
+            100% { box-shadow: 0 0 35px 10px rgba(255, 108, 0, 0.7); }
+        }
+        
+        @keyframes fireEffect {
+            0% {
+                transform: scaleX(1) scaleY(0.9);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scaleX(1.05) scaleY(1.1);
+                opacity: 0.9;
+            }
+        }
+        
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .option {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+        
+        /* Iconos de FontAwesome */
+        .fa {
+            font-family: Arial, sans-serif;
+            display: inline-block;
+        }
+        
+        /* Estilos para el botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: whatsapp-pulse 2s infinite;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
